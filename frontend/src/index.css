@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Bridge at Night Design System Tokens (Specification Section 14.1)
+   Palette: Navy, Indigo, Violet, Cyan, Amber, Mint, Coral, Light Relief
+   ========================================================================== */
+
+:root {
+  --color-canvas: #0B1020;
+  --color-surface: #151B3A;
+  --color-surface-hover: #1E2752;
+  --color-surface-elevated: #1A2248;
+  --color-border: #27325E;
+  --color-border-subtle: #1E2752;
+
+  /* Pedagogical & System Roles */
+  --color-violet: #7C5CFF;    /* Primary Brand & Actions */
+  --color-cyan: #22D3EE;      /* System Evidence & Automated Signals */
+  --color-amber: #FFB547;     /* Teacher Pedagogical Decisions & Reviews */
+  --color-mint: #34D399;      /* Validated States & Mastery */
+  --color-coral: #FF6B6B;     /* Critical Errors & Gaps */
+
+  /* High Contrast Typography */
+  --color-text-main: #F6F3EC;
+  --color-text-muted: #94A3B8;
+  --color-text-dim: #64748B;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Calibri, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   WCAG 2.1 AA Keyboard Focus Visibility (Section 14.2)
+   ========================================================================== */
+
+*:focus-visible {
+  outline: 2px solid var(--color-cyan) !important;
+  outline-offset: 2px !important;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-cyan) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.25) !important;
+}
+
+/* ==========================================================================
+   Reduced Motion Preferences (Section 14.1)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Scrollbars
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B4B85;
+}
+
+/* ==========================================================================
+   Accessibility Utilities
+   ========================================================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
