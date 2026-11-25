@@ -23,6 +23,7 @@ EXCLUDE_DIRS = {
     ".idea",
     ".venv",
     "venv",
+    "video_assets",
 }
 
 EXCLUDE_EXTENSIONS = {".pyc", ".pyo", ".log"}
